@@ -1,0 +1,31 @@
+<h3 class="add-heading">Add/Update Product </h3>
+<hr>
+
+	<div class="form-group">
+		Name :
+		<input class="form-control"	type ="text"  name= "name" [(ngModel)]="productModel.name">
+	</div>
+
+  <div class="form-group">
+    Code :
+    <input class="form-control"	type ="text"  name= "code" [(ngModel)]="productModel.code">
+  </div>
+
+  <div class="form-group">
+    Buy Margin :
+    <input class="form-control"	type ="text"  name= "buyMargin" [(ngModel)]="productModel.buyMargin">
+  </div>
+
+  <div class="form-group">
+    Sell Margin :
+    <input class="form-control"	type ="text"  name= "sellMargin" [(ngModel)]="productModel.sellMargin">
+  </div>
+
+  <input type ="hidden"  name= "isAvailable" [(ngModel)]="productModel.isAvailable">
+
+
+	<div class="form-group">
+		<button *ngIf="isInsert" class="btn btn-primary" (click)="addProduct()">Add Product</button>
+        <button  *ngIf="!isInsert" class="btn btn-primary" (click)="updateProduct()">Update</button>
+		<button  class="btn " (click)="resetAddProduct()">Reset</button>
+	</div>

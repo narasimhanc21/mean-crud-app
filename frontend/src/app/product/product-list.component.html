@@ -1,0 +1,13 @@
+<h3 class="product-list-heading">List of Products</h3>
+<hr>
+<div class="list-of-items">
+	<ul class="list-group">
+		<li *ngFor="let product of productList"
+			class="list-group-item"
+			(click)="productSelected(product)"
+			[class.active]="isSelected(product) && isReset">
+			{{ product.name}}
+			<div class="deleteProducts" (click)="deleteProduct(product._id)">X</div>
+		</li>
+	</ul>
+</div>
